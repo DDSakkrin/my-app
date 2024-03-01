@@ -10,6 +10,9 @@ COPY ./html/ .
 # เปิด mod_rewrite สำหรับการใช้งาน RewriteEngine ใน .htaccess
 RUN a2enmod rewrite
 
+# เปิดพอร์ต 8080 สำหรับ Apache
+EXPOSE 8080
+
 # ตั้งค่า timezone ให้เป็น Asia/Bangkok หรือใส่ timezone ที่ต้องการ
 RUN ln -snf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && echo Asia/Bangkok > /etc/timezone
 

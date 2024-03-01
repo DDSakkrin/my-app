@@ -22,11 +22,9 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
 
   web:
-    image: php:7.4-apache
-    volumes:
-      - ./html:/var/www/html
+    build: .
     ports:
-      - '80:80'
+      - '8080:8080'
     depends_on:
       - db
 
